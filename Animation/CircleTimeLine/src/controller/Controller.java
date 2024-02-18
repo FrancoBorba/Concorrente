@@ -9,12 +9,15 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 public class Controller implements Initializable {
 
     @FXML
     private Circle myCircle;
+    @FXML
+    private Rectangle mySquare;
 
     
     @Override
@@ -26,7 +29,8 @@ public class Controller implements Initializable {
         // Criando uma timeline para animar o círculo
         Timeline timeline = new Timeline();
 
-        KeyValue keyValue = new KeyValue(myCircle.translateXProperty(), 525);
+        KeyValue circValue = new KeyValue(myCircle.translateXProperty(), 525);
+        KeyValue squareValue = new KeyValue(mySquare.translateYProperty(), -350);
         /*
          * KeyValue é uma classe em JavaFX que representa um par chave-valor usado para definir o estado de uma propriedade em um determinado momento (keyframe) durante uma animação.
 
@@ -34,12 +38,13 @@ public class Controller implements Initializable {
     O valor (Value) é o valor que a propriedade terá no momento específico definido pelo keyframe.
     Por exemplo, se você quiser animar a posição x de um nó gráfico para 100 pixels ao longo de 2 segundos, você criaria um KeyValue assim:
          */
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(3), keyValue);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(3),circValue,squareValue);
+        
 
         timeline.getKeyFrames().add(keyFrame);
 
         timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.isAutoReverse();
+        timeline.setAutoReverse(true);
         timeline.play();
     }
 
