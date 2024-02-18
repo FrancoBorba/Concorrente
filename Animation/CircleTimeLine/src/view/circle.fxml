@@ -9,5 +9,6 @@
    <children>
       <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="35.0" layoutY="-35.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle fx:id="mySquare" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutY="350.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Circle fx:id="circle2" fill="DODGERBLUE" layoutX="551.0" layoutY="357.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
