@@ -6,8 +6,8 @@ public class Train {
     
     private ImageView imageView;
     private int opcao; // determina as posições iniciais do trem
-    private int velocidadeX;
-    private int velocidadeY;
+    private double velocidadeX;
+    private double velocidadeY;
 
     public Train(ImageView imageView , int opcao){
         this.imageView = imageView;
@@ -47,16 +47,16 @@ public class Train {
     public int getOpcao(){
         return opcao;
     }
-    public void setVelocidadeX(int x){
-        this.velocidadeX = x;
+    public void setVelocidadeX(double velocidadeX){
+        this.velocidadeX = velocidadeX;
     }
-    public int getVelocidadeX(){
+    public double getVelocidadeX(){
         return velocidadeX;
     }
-    public void setVelocidadeY(int y){
-        this.velocidadeY = y;
+    public void setVelocidadeY(double velocidadeY){
+        this.velocidadeY = velocidadeY;
     }
-    public int getVelocidadeY(){
+    public double getVelocidadeY(){
         return velocidadeY;
     }
     public ImageView getImageView(){

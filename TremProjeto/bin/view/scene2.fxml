@@ -12,14 +12,14 @@
             <Image url="@../image/TrilhosConcorrente.jpeg" />
          </image>
       </ImageView>
-      <Slider fx:id="speedTrain1" layoutX="54.0" layoutY="193.0" orientation="VERTICAL" />
-      <Slider fx:id="speedTrain2" layoutX="130.0" layoutY="193.0" orientation="VERTICAL" />
+      <Slider fx:id="speedTrain1" blockIncrement="1.0" layoutX="54.0" layoutY="193.0" max="10.0" min="1.0" orientation="VERTICAL" value="5.0" />
+      <Slider fx:id="speedTrain2" layoutX="130.0" layoutY="193.0" max="10.0" min="1.0" orientation="VERTICAL" value="5.0" />
       <ImageView fx:id="imageTrain2" fitHeight="61.0" fitWidth="20.0" layoutX="84.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/Trem.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imageTrain1" fitHeight="61.0" fitWidth="20.0" layoutX="171.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageTrain1" fitHeight="61.0" fitWidth="20.0" layoutX="378.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/Trem.png" />
          </image>
