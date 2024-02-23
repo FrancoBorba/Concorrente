@@ -15,20 +15,20 @@ public class Train {
         switch (opcao) {
              case 0:{
                 imageView.setLayoutX(378);
-                imageView.setLayoutY(339);
+                imageView.setLayoutY(370);
                 imageView.setRotate(15);
                 break;
             }
             case 1:{
                 imageView.setLayoutX(489);
-                imageView.setLayoutY(339);
+                imageView.setLayoutY(370);
                 imageView.setRotate(-15);
                 break;
             }
                 
            case 2:{
-                imageView.setLayoutX(379);
-                imageView.setLayoutY(-16);
+                imageView.setLayoutX(377);
+                imageView.setLayoutY(-30);
                 imageView.setRotate(180);
                 break;
             }
@@ -36,6 +36,7 @@ public class Train {
                 imageView.setLayoutX(482);
                 imageView.setLayoutY(-16);
                 imageView.setRotate(180);
+                break;
             }
 
             default:

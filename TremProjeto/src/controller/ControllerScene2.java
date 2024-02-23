@@ -3,6 +3,7 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.animation.AnimationTimer;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -33,8 +34,12 @@ public class ControllerScene2 implements Initializable{
        switch (data.getOpcao()) {
         case 0:{
             trem1 = new Train(imageTrain1, 0);
-             trem2 = new Train(imageTrain2, 1);
+            trem2 = new Train(imageTrain2, 1);
                 break;
+        }
+        case 1:{
+         trem1 = new Train(imageTrain1, 2);
+         trem2 = new Train(imageTrain2,  3);
         }
 
              
@@ -43,6 +48,7 @@ public class ControllerScene2 implements Initializable{
         default:
             break;
        }
+       
 
        speedTrain1.valueProperty().addListener( new ChangeListener<Number>() {
 
@@ -68,6 +74,30 @@ public class ControllerScene2 implements Initializable{
 
        trainMoviment = new TrainMoviment();
 
+       AnimationTimer train1Timer = new AnimationTimer() {
+
+        @Override
+        public void handle(long now) {
+           trem1.setVelocidadeX(speedTrain1.getValue());
+           trem1.setVelocidadeY(speedTrain1.getValue());
+          trainMoviment.movimentPosisition0(trem1);
+        }
+        
+       };
+       train1Timer.start();
+
+       AnimationTimer train2timer = new AnimationTimer(){
+
+         @Override
+         public void handle(long now) {
+         trem2.setVelocidadeX(speedTrain2.getValue());
+         trem2.setVelocidadeY(speedTrain2.getValue());
+         trainMoviment.movimentPosisition1(trem2);
+         }
+
+       };
+       train2timer.start();
+       
     }
 
     
