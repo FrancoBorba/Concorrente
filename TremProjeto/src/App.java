@@ -11,10 +11,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader();
-
-        Parent root = loader.load(getClass().getResource("/view/scene1.fxml"));
-
+        Parent root = FXMLLoader.load(getClass().getResource("/view/scene1.fxml"));
+        
         Scene scene = new Scene(root);
 
         primaryStage.setTitle("PROJETO TRENS");
