@@ -33,13 +33,24 @@ public class ControllerScene2 implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
        switch (data.getOpcao()) {
         case 0:{
-            trem1 = new Train(imageTrain1, 0);
-            trem2 = new Train(imageTrain2, 1);
+        trem1 = new Train(imageTrain1, 0);
+        trem2 = new Train(imageTrain2, 1);
                 break;
         }
         case 1:{
          trem1 = new Train(imageTrain1, 2);
          trem2 = new Train(imageTrain2,  3);
+         break;
+        }
+        case 2:{
+            trem1 = new Train(imageTrain1, 0);
+            trem2 = new Train(imageTrain2,  3);
+            break;
+        }
+        case 3:{
+            trem1 = new Train(imageTrain1, 2);
+            trem2 = new Train(imageTrain2,  1);
+            break;
         }
 
              
@@ -80,7 +91,7 @@ public class ControllerScene2 implements Initializable{
         public void handle(long now) {
            trem1.setVelocidadeX(speedTrain1.getValue());
            trem1.setVelocidadeY(speedTrain1.getValue());
-          trainMoviment.movimentPosisition0(trem1);
+          trainMoviment.trainMoviment(trem1);
         }
         
        };
@@ -92,7 +103,7 @@ public class ControllerScene2 implements Initializable{
          public void handle(long now) {
          trem2.setVelocidadeX(speedTrain2.getValue());
          trem2.setVelocidadeY(speedTrain2.getValue());
-         trainMoviment.movimentPosisition1(trem2);
+         trainMoviment.trainMoviment(trem2);
          }
 
        };

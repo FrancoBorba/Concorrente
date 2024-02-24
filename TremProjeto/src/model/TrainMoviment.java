@@ -3,7 +3,28 @@ package model;
 public class TrainMoviment {
 
 
+    public void trainMoviment(Train train){
+        switch (train.getOpcao()) {
+            case 0:{
+                movimentPosisition0(train);
+                break;
+            }
+            case 1:{
+                movimentPosisition1(train);
+                break;
+            }
+            case 2:{
+                movimentPosisition2(train);
+                break;
+            }
+            case 3:{
+                movimentPosisition3(train);
+            }
 
+            default:
+                break;
+        }
+    }
 
 
     public void movimentPosisition0(Train train){
@@ -59,6 +80,72 @@ public class TrainMoviment {
             train.getImageView().setLayoutX(489);
                 train.getImageView().setLayoutY(370);
                 train.getImageView().setRotate(-15);
-        }
+        }    
 }
+    public void movimentPosisition2(Train train){
+        if ((train.getImageView().getLayoutY() <= 30) && (train.getImageView().getLayoutY() > -100)) {
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+        } else if((train.getImageView().getLayoutY() <= 67) && (train.getImageView().getLayoutY() > 30)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setLayoutX(train.getImageView().getLayoutX() + train.getVelocidadeX());
+            train.getImageView().setRotate(140);
+        } else if((train.getImageView().getLayoutY() <= 133) && (train.getImageView().getLayoutY() >= 67)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setLayoutX(train.getImageView().getLayoutX() + train.getVelocidadeX());
+            train.getImageView().setRotate(180);
+        } else if((train.getImageView().getLayoutY() <= 220) && (train.getImageView().getLayoutY() >= 133)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setRotate(215);
+        } else if((train.getImageView().getLayoutY() <= 315 ) && (train.getImageView().getLayoutY() >= 220)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setLayoutX(train.getImageView().getLayoutX() - train.getVelocidadeX());
+            train.getImageView().setRotate(190);
+        } else if((train.getImageView().getLayoutY() <= 400) && (train.getImageView().getLayoutY() >= 315)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+        } else {
+            train.getImageView().setLayoutX(377);
+            train.getImageView().setLayoutY(-30);
+        }
+
+    }
+    public void movimentPosisition3(Train train){
+        if ((train.getImageView().getLayoutY() <= 25) && (train.getImageView().getLayoutY() > -100)) {
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setRotate(200);
+        } else if((train.getImageView().getLayoutY() <= 110 ) && (train.getImageView().getLayoutY() >= 25)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setLayoutX(train.getImageView().getLayoutX() - train.getVelocidadeX());
+            train.getImageView().setRotate(190);
+        } else if((train.getImageView().getLayoutY() <= 145 ) && (train.getImageView().getLayoutY() >= 110)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+        } else if((train.getImageView().getLayoutY() <= 155 ) && (train.getImageView().getLayoutY() >= 145)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setLayoutX(train.getImageView().getLayoutX() - train.getVelocidadeX());
+            train.getImageView().setRotate(170);
+        } else if((train.getImageView().getLayoutY() <= 213 ) && (train.getImageView().getLayoutY() >= 155)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+           train.getImageView().setRotate(155);
+        } else if((train.getImageView().getLayoutY() <= 303 ) && (train.getImageView().getLayoutY() >= 213)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setLayoutX(train.getImageView().getLayoutX() + train.getVelocidadeX());
+        } else if( (train.getImageView().getLayoutY() <= 400 ) && (train.getImageView().getLayoutY() >= 303)){
+            train.getImageView().setLayoutY(train.getImageView().getLayoutY() + train.getVelocidadeY());
+            train.getImageView().setRotate(165);
+        } else {
+            train.getImageView().setLayoutX(482);
+            train.getImageView().setLayoutY(-30);
+        }
+    }
+
+    public void checkColision(Train train1 , Train train2){
+        
+    }
+
+
+
+
+
+
+
+
 }
