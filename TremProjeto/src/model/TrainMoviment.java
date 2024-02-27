@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.shape.Circle;
+
 public class TrainMoviment {
 
 
@@ -136,16 +138,10 @@ public class TrainMoviment {
             train.getImageView().setLayoutY(-30);
         }
     }
-
-    public void checkColision(Train train1 , Train train2){
-        
+    public boolean isInDanger(Train trem, Circle danger){
+       if(trem.getImageView().getBoundsInParent().intersects(danger.getBoundsInParent())){
+        return true;
+       }
+        return false;
     }
-
-
-
-
-
-
-
-
 }

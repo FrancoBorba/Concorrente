@@ -21,7 +21,7 @@ public class Train {
             }
             case 1:{
                 imageView.setLayoutX(489);
-                imageView.setLayoutY(370);
+                imageView.setLayoutY(371);
                 imageView.setRotate(-15);
                 break;
             }
