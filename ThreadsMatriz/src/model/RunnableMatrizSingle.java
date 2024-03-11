@@ -29,12 +29,13 @@ public class RunnableMatrizSingle implements Runnable{
                 }
             }
        }
+  }     
        // O Platform.runLater é utilizado já que o javaFX não é uma biblioteca Thread Safe , assim poderia disparar uma execeção em tempo de execução
 
        // O PLatform.runLater sera o responsavel pela modificação grafica delegando a função a Thread do javaFX
 
 
 
-    }
+    
     
 }
